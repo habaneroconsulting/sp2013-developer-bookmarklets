@@ -4,7 +4,7 @@ Some helpful browser [bookmarklets](http://en.wikipedia.org/wiki/Bookmarklet) yo
 
 ##Getting Started
 
-If you want to just use the generated bookmarklets right away you can find all the compiled .js files in the /bin folder. Just find the bookmarklet you want to leverage, copy its contents into your browser bookmark URL and you're all set.
+If you want to just use the generated bookmarklets right away you can find all the compiled .js files in the /bin folder. Just find the bookmarklet you want to leverage, copy its contents into your browser bookmark URL and you're all set. NOTE: Some older browsers have URL character limits so bookmarklets longer than 2000 characters can be problematic depending on your browser. For these more complex bookmarklets you will need to use a browser that supports longer URL lengths for bookmark URLs. The compilation process if you're modifying the source will warn you if your bookmarklet exceeds 2000 characters, but this will not prevent its compilation. You can ignore this warning if you're working with a relatively new browser that has longer URL limits.
 
 Refer to Build Instructions in this README for details on how to modify and compile the bookmarklet source files.
 
@@ -22,9 +22,13 @@ Refer to Build Instructions in this README for details on how to modify and comp
 
 ## Bookmarklets
 
-### Login as a Different User (login-different-user.js)
+### Login as a Different User ([source](src/login-different-user.js) / [bookmarklet](bin/login-different-user.bookmarklet.js))
 
 This bookmarklet is a handy quick link to force logging in as a different user. Since SP 2013 obscured this functionality this makes it a lot easier than logging out and opening a new browser instance.
+
+### REST API Endpoints ([source](src/rest-endpoints.js) / [bookmarklet](bin/rest-endpoints.bookmarklet.js))
+
+Will bring up a modal dialog with a list of popular REST API endpoints. Just click one and it will open in a new window/tab. Easier than having to memorize all the endpoints or keep external or individual bookmarks to them somewhere. There is also a checkbox to scope the links to the current site collection. By default they are all relative to your current site.
 
 ## Support
 
