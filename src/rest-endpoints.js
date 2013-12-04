@@ -5,7 +5,7 @@
  */
 
  /* Register custom namespace */
- var Hcf = Hcf || {};
+ window.Hcf = window.Hcf || {};
  Hcf.RestEndpointsBookmarklet = Hcf.RestEndpointsBookmarklet || {};
  
 (function (module, window, document, undefined) {
@@ -14,17 +14,21 @@
     var relativeToSiteCollectionInput,
 		relativeToSiteCollection = false;
 
+		
 	/**
 	* Constructor
 	*/
     function init() {
-        // If our page context object exists, show our UI
-        if (SP) {
-			// Get modal library, then we can use the CSOM and initialize our bookmarklet UI
-			SP.SOD.loadMultiple(['sp.ui.dialog.js'], function () {
-				toggleUI();
-			});
-        }
+		// Don't want to do anything if our endpoints modal is already opened
+		if (!module.isModalOpened) {
+			// If our page context object exists, show our UI
+			if (SP) {
+				// Get modal library, then we can use the CSOM and initialize our bookmarklet UI
+				SP.SOD.loadMultiple(['sp.ui.dialog.js'], function () {
+					toggleUI();
+				});
+			}
+		}
     }
     
 
@@ -41,7 +45,7 @@
 			outputHtml += '<h3>' + endpoints[key].title + '</h3>';
 
 			for (var subkey in endpoints[key].links) {
-				outputHtml += '<a href="' + endpoints[key].links[subkey].url + '" onclick="Hcf.RestEndpointsBookmarklet.execLink(this);">' + endpoints[key].links[subkey].title + '</a><br />';
+				outputHtml += '<a href="' + endpoints[key].links[subkey].url + '" onclick="Hcf.RestEndpointsBookmarklet.execLink(this);return false;">' + endpoints[key].links[subkey].title + '</a><br />';
 			}
 
 			outputHtml += '<br />';
@@ -52,10 +56,14 @@
 		
 		var options = {
 			title: 'REST API endpoints',
-			html: container
+			html: container,
+			dialogReturnValueCallback: function() {
+				module.isModalOpened = false;
+			}
 		};
 
 		SP.UI.ModalDialog.showModalDialog(options);
+		module.isModalOpened = true;
     }
 
 
@@ -197,4 +205,4 @@
     // Fire initialization
     init();
 
-})(Hcf.RestEndpointsBookmarklet, window, document);
+})(window.Hcf.RestEndpointsBookmarklet, window, document);
