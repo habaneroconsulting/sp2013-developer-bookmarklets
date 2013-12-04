@@ -22,13 +22,13 @@ Refer to Build Instructions in this README for details on how to modify and comp
 
 ## Bookmarklets
 
-### Login as a Different User
+### Login as a Different User (login-different-user.js)
 
 This bookmarklet is a handy quick link to force logging in as a different user. Since SP 2013 obscured this functionality this makes it a lot easier than logging out and opening a new browser instance.
 
 ## Support
 
-If you have a bug, or a feature request, please post in the [issue tracker](https://github.com/habaneroconsulting/sp2013-developer-bookmarklets). If you logging in reference to a specific bookmarklet please reference it in your issue title.
+If you have a bug, or a feature request, please post in the [issue tracker](https://github.com/habaneroconsulting/sp2013-developer-bookmarklets/issues). If you logging in reference to a specific bookmarklet please reference it in your issue title.
 	
 ## License
 
