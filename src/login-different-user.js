@@ -7,8 +7,6 @@
 (function (window, document, undefined) {
     'use strict';
 
-    var module = {};
-
     function init() {
         // If our page context object exists, show our UI
         if (_spPageContextInfo) {
@@ -32,13 +30,7 @@
     function getWebServerRelativeUrl() {
         return (_spPageContextInfo.webServerRelativeUrl === '/') ? _spPageContextInfo.webServerRelativeUrl : _spPageContextInfo.webServerRelativeUrl + '/';
     }
-	
 
-	/**
-	* Module configuration object
-	*/
-    module.config = {
-    };
 
     // Fire initialization
     init();

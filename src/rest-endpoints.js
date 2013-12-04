@@ -5,7 +5,7 @@
  */
 
  /* Register custom namespace */
- Hcf = Hcf || {};
+ var Hcf = Hcf || {};
  Hcf.RestEndpointsBookmarklet = Hcf.RestEndpointsBookmarklet || {};
  
 (function (module, window, document, undefined) {
