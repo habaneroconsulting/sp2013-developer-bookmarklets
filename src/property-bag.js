@@ -73,15 +73,21 @@
 	function getPropertyBagSuccess() {
 		var allProps = props.get_fieldValues(),
 			container = document.createElement('div'),
-			outputHtml = '<table><thead><tr style="text-align: left"><th>Key</th><th>Value</th></thead>',
-			counter = 0, tableRowStyleAttr;
-
+			counter = 0, trStyle, tdStyle = ' style="padding: 5px;"',
+			outputHtml = '<table><thead><tr><th align="left"' + tdStyle + '>Key</th><th align="left"' + tdStyle + '>Value</th></thead>',
+			sortedArray = [];
+		
 		for (var key in allProps) {
-			tableRowStyleAttr = (counter%2 === 0) ? '' : ' style = "background: #f0f0f0"';
 			if (allProps.hasOwnProperty(key)) {
-				outputHtml += '<tr' + tableRowStyleAttr + '><td>' + key + '</td><td>' + allProps[key] + '</td></tr>';
+				sortedArray.push(key);
 			}
-			counter++;
+		}
+		
+		sortedArray.sort();
+		
+		for (var i=0; i < sortedArray.length; i++) {
+			trStyle = (i%2 === 0) ? '' : ' style="background: #f0f0f0"';
+			outputHtml += '<tr' + trStyle + '><td' + tdStyle + '>' + sortedArray[i] + '</td><td' + tdStyle + '>' + allProps[sortedArray[i]] + '</td></tr>';
 		}
 		
 		outputHtml += '</table>';
