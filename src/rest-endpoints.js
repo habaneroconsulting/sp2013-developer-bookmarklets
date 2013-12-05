@@ -22,7 +22,7 @@
 		// Don't want to do anything if our endpoints modal is already opened
 		if (!module.isModalOpened) {
 			// If our page context object exists, show our UI
-			if (SP) {
+			if (typeof SP !== 'undefined') {
 				// Get modal library, then we can use the CSOM and initialize our bookmarklet UI
 				SP.SOD.loadMultiple(['sp.ui.dialog.js'], function () {
 					toggleUI();
