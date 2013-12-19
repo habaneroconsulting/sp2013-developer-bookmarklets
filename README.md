@@ -30,7 +30,7 @@ This bookmarklet is a handy quick link to force logging in as a different user. 
 
 Will bring up a modal dialog with a list of popular REST API endpoints. Just click one and it will open in a new window/tab. Easier than having to memorize all the endpoints or keep external or individual bookmarks to them somewhere. There is also a checkbox to scope the links to the current site collection. By default they are all relative to your current site.
 
-### Property Bag ([source](src/property-bag.js) / [bookmarklet](bin/property-bag.bookmarklet.js)
+### Property Bag ([source](src/property-bag.js) / [bookmarklet](bin/property-bag.bookmarklet.js))
 
 Shows a list of all properties in the current web's property bag.
 
@@ -40,7 +40,7 @@ If you have a bug, or a feature request, please post in the [issue tracker](http
 	
 ## License
 
-Copyright (c) 2013 Habanero Consulting Group
+Copyright (c) 2013 [Habanero Consulting Group] (http://www.habaneroconsulting.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: 
 
