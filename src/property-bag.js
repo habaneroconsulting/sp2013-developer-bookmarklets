@@ -1,5 +1,5 @@
 ﻿/*!
- * Bookmarklet for re-applying current composed look
+ * Bookmarklet for getting properties from Property Bag
  * Mark Bice <mbice@habaneroconsulting.com>
  * Habanero Consulting Group - Licensed under MIT
  */
